@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvthgqa277uun"]
+
+[ext_resource type="FontFile" uid="uid://djlftvxwqwmdv" path="res://Material Freeway/Material Freeway/PressStart2P-Regular.ttf" id="1_jsi4g"]
+[ext_resource type="Script" uid="uid://78te1kr50ox7" path="res://cenas/pause_menu.gd" id="1_m0p7e"]
+
+[node name="Pause_Menu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_m0p7e")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -57.0
+offset_top = 262.0
+offset_right = 55.0
+offset_bottom = 285.48
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_jsi4g")
+theme_override_font_sizes/font_size = 32
+text = "Pausado"
+
+[node name="Continuar" type="Button" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -147.0
+offset_top = 351.0
+offset_right = 149.0
+offset_bottom = 391.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_jsi4g")
+theme_override_font_sizes/font_size = 32
+text = "Continuar"
+
+[node name="Sair" type="Button" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -68.0
+offset_top = 471.0
+offset_right = 68.0
+offset_bottom = 511.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_jsi4g")
+theme_override_font_sizes/font_size = 32
+text = "Sair"
+
+[connection signal="pressed" from="Continuar" to="." method="_on_continuar_pressed"]
+[connection signal="pressed" from="Sair" to="." method="_on_sair_pressed"]
