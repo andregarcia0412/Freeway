@@ -1,0 +1,174 @@
+[gd_scene load_steps=25 format=3 uid="uid://bp6kykh8qq75e"]
+
+[ext_resource type="Texture2D" uid="uid://ctkib8dvm1fqc" path="res://Material Freeway/Material Freeway/galinha/baixo/sprite_0.png" id="1_8v4ht"]
+[ext_resource type="Script" uid="uid://bvjs1fompucyj" path="res://cenas/player.gd" id="1_ogt8j"]
+[ext_resource type="Texture2D" uid="uid://t74lq18lj412" path="res://Material Freeway/Material Freeway/galinha/baixo/sprite_1.png" id="2_4y2i1"]
+[ext_resource type="Texture2D" uid="uid://cx03j1ypvisqd" path="res://Material Freeway/Material Freeway/PC _ Computer - Stardew Valley - Animals - Calf (White).png" id="2_rijvs"]
+[ext_resource type="Texture2D" uid="uid://drqotpdgmq203" path="res://Material Freeway/Material Freeway/galinha/baixo/sprite_2.png" id="3_ogt8j"]
+[ext_resource type="Texture2D" uid="uid://cd70yqquiwcik" path="res://Material Freeway/Material Freeway/galinha/cima/sprite_0.png" id="4_rijvs"]
+[ext_resource type="Texture2D" uid="uid://dt3qni5xvrv1v" path="res://Material Freeway/Material Freeway/galinha/cima/sprite_1.png" id="5_mp0j6"]
+[ext_resource type="Texture2D" uid="uid://5yj5fvu0hl7r" path="res://Material Freeway/Material Freeway/galinha/cima/sprite_2.png" id="6_8bq56"]
+[ext_resource type="AudioStream" uid="uid://cjm61gqsyw3r5" path="res://Material Freeway/Material Freeway/sons/deltarune splat sfx.wav" id="9_rijvs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mp0j6"]
+atlas = ExtResource("2_rijvs")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bq56"]
+atlas = ExtResource("2_rijvs")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tckef"]
+atlas = ExtResource("2_rijvs")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ym2kn"]
+atlas = ExtResource("2_rijvs")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtxll"]
+atlas = ExtResource("2_rijvs")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1iqd"]
+atlas = ExtResource("2_rijvs")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ptbh"]
+atlas = ExtResource("2_rijvs")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uk4ck"]
+atlas = ExtResource("2_rijvs")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gonb2"]
+atlas = ExtResource("2_rijvs")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4uu1"]
+atlas = ExtResource("2_rijvs")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86n0t"]
+atlas = ExtResource("2_rijvs")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vaqx"]
+atlas = ExtResource("2_rijvs")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tckef"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mp0j6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8bq56")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tckef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ym2kn")
+}],
+"loop": true,
+"name": &"baixo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8v4ht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_4y2i1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ogt8j")
+}],
+"loop": true,
+"name": &"baixoChicken",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtxll")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s1iqd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ptbh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uk4ck")
+}],
+"loop": true,
+"name": &"cima",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_rijvs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mp0j6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8bq56")
+}],
+"loop": true,
+"name": &"cimaChicken",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gonb2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4uu1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86n0t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1vaqx")
+}],
+"loop": true,
+"name": &"horizontal",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rijvs"]
+radius = 12.0
+height = 36.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mp0j6"]
+radius = 12.0
+height = 40.0
+
+[node name="Player" type="Area2D"]
+script = ExtResource("1_ogt8j")
+
+[node name="Animacao" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -2)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_tckef")
+animation = &"cima"
+
+[node name="Colisao" type="CollisionShape2D" parent="."]
+position = Vector2(1, 6)
+shape = SubResource("CapsuleShape2D_rijvs")
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-1, -1)
+stream = ExtResource("9_rijvs")
+
+[node name="ColisaoHorizontal" type="CollisionShape2D" parent="."]
+position = Vector2(2, 11)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_mp0j6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

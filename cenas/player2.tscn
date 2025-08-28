@@ -1,0 +1,141 @@
+[gd_scene load_steps=19 format=3 uid="uid://dqpfdcia6v6ai"]
+
+[ext_resource type="Script" uid="uid://e7aylsuwfwht" path="res://cenas/player_2.gd" id="1_fhjse"]
+[ext_resource type="Texture2D" uid="uid://c5d65ssxpsagm" path="res://Material Freeway/Material Freeway/pig_sprites.png" id="2_yhgj5"]
+[ext_resource type="AudioStream" uid="uid://cjm61gqsyw3r5" path="res://Material Freeway/Material Freeway/sons/deltarune splat sfx.wav" id="9_6tf6b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pj2hv"]
+atlas = ExtResource("2_yhgj5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6w0b"]
+atlas = ExtResource("2_yhgj5")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pv3x8"]
+atlas = ExtResource("2_yhgj5")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3gyu"]
+atlas = ExtResource("2_yhgj5")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhgj5"]
+atlas = ExtResource("2_yhgj5")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6gfy"]
+atlas = ExtResource("2_yhgj5")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhjse"]
+atlas = ExtResource("2_yhgj5")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3q7ms"]
+atlas = ExtResource("2_yhgj5")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bnjns"]
+atlas = ExtResource("2_yhgj5")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imd7f"]
+atlas = ExtResource("2_yhgj5")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7m5u"]
+atlas = ExtResource("2_yhgj5")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ib34g"]
+atlas = ExtResource("2_yhgj5")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tckef"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pj2hv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6w0b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pv3x8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3gyu")
+}],
+"loop": true,
+"name": &"baixo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhgj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6gfy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhjse")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3q7ms")
+}],
+"loop": true,
+"name": &"cima",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bnjns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imd7f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7m5u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ib34g")
+}],
+"loop": true,
+"name": &"horizontal",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rijvs"]
+radius = 12.0
+height = 36.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mp0j6"]
+radius = 12.0
+height = 40.0
+
+[node name="Player2" type="Area2D"]
+script = ExtResource("1_fhjse")
+
+[node name="Animacao" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -2)
+scale = Vector2(1.8, 1.8)
+sprite_frames = SubResource("SpriteFrames_tckef")
+animation = &"cima"
+
+[node name="Colisao" type="CollisionShape2D" parent="."]
+position = Vector2(1, 6)
+shape = SubResource("CapsuleShape2D_rijvs")
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-1, -1)
+stream = ExtResource("9_6tf6b")
+
+[node name="ColisaoHorizontal" type="CollisionShape2D" parent="."]
+position = Vector2(2, 11)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_mp0j6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="player2_pontua" from="." to="." method="_on_player_2_pontua"]
